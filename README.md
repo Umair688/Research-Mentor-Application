@@ -1,110 +1,92 @@
-"LexResearch AI — Evidence-Grounded Legal Research & Case Preparation Copilot"
+# ResearchMentor AI
 
-PRODUCT VISION
+An AI-powered research mentoring application that guides law and social science students through the research process step by step.
 
-Build an interactive AI-powered legal research workspace that helps lawyers and law students move from an unstructured legal problem to a structured, evidence-grounded case research report.
+## About
 
-The application must NOT behave like a generic legal chatbot.
+**ResearchMentor AI** is designed to act as a research mentor rather than simply generating research content for students.
 
-Its primary purpose is to:
+The application encourages students to develop their own ideas and provides AI-guided feedback throughout three stages of the research process:
 
-- structure legal problems
-- analyze uploaded legal documents
-- retrieve relevant passages
-- identify legal issues
-- compare authorities
-- detect contradictions
-- build arguments and counterarguments
-- verify citations
-- identify unsupported claims
-- generate a structured research report
+- **Module 1 — Research Discovery:** Develop and refine a research topic and question.
+- **Module 2 — Literature Review:** Analyse research papers, identify patterns, and develop a research gap.
+- **Module 3 — Research Design:** Select and justify an appropriate research methodology.
 
-The AI must act as a research assistant and analytical advisor, not as a replacement for a qualified lawyer.
+The AI follows a mentoring approach:
 
-CORE PRINCIPLE
+> **Block irrelevant responses. Guide weak responses. Encourage strong responses.**
 
-Every important AI-generated legal claim must be grounded in retrieved source material whenever source material is available.
+## Key Features
 
-The application must never invent:
+- 🤖 AI-powered research supervision
+- 🧠 Encourages independent student thinking
+- 📚 Literature review guidance
+- 🔍 Research gap identification
+- ⚖️ Designed for law and social science research
+- 📝 Research methodology guidance
+- 📄 PDF research paper support
+- 💾 Multiple research project management
+- 🔐 API key support through Streamlit secrets or user input
 
-- cases
-- statutes
-- legal provisions
-- quotations
-- citations
-- court decisions
-- facts
-
-If evidence is unavailable, explicitly say:
-
-"Insufficient evidence in the available sources."
-
-TECHNOLOGY
-
-Build the application using:
+## Tech Stack
 
 - Python
 - Streamlit
-- OpenAI Agents SDK for agent orchestration
-- MCP for modular tool integration
-- RAG architecture
-- PDF/document parsing
-- embeddings
-- vector database suitable for a local hackathon deployment
-- an LLM provider with API-key configuration through the application settings
-- modular architecture
-- clean error handling
-- environment-variable support as an optional deployment method
+- Google Gemini API
+- Pandas
+- PyPDF
 
-Do not hardcode API keys.
+## Installation
 
-The application should allow the user to enter/configure the required API key through a secure settings interface where practical.
+### 1. Clone the repository
 
-APPLICATION WORKFLOW
+```bash
+git clone <your-repository-url>
+cd ResearchMentor-AI
+```
 
-Create exactly six major workflow modules.
+### 2. Install dependencies
 
-MODULE 1 — CASE INTAKE & ISSUE FORMULATION
+```bash
+pip install -r requirements.txt
+```
 
-User provides:
+### 3. Configure your API key
 
-- case title
-- jurisdiction
-- practice area
-- client position
-- case facts
-- known legal issues
-- available documents
+Add your Google API key through Streamlit secrets:
 
-Create a Case Intake Agent.
+```toml
+GOOGLE_API_KEY = "your_api_key_here"
+```
 
-The agent should:
+Alternatively, the application supports API key input within the app.
 
-- summarize user-provided facts
-- separate facts from assumptions
-- identify primary legal issues
-- identify secondary legal issues
-- generate research questions
-- identify missing information
-- identify potentially relevant legal domains
+### 4. Run the application
 
-Display:
+```bash
+streamlit run app.py
+```
 
-Primary Issues
-Secondary Issues
-Missing Information
-Research Questions
+## Project Structure
 
-Do not present AI assumptions as established facts.
+```text
+ResearchMentor-AI/
+├── app.py
+├── requirements.txt
+├── .gitignore
+└── README.md
+```
 
-MODULE 2 — LEGAL RESEARCH & DOCUMENT ANALYSIS
+## Project Goal
 
-Allow users to upload:
+Traditional AI tools often generate research content directly for students.
 
-- PDF judgments
-- statutes
-- regulations
-- contracts
-- legal articles
-- research documents
-- case briefs
+**ResearchMentor AI takes a different approach.**
+
+Instead of replacing the student's thinking, it aims to guide students through:
+
+**Idea → Question → Literature → Research Gap → Methodology**
+
+## Hackathon Vision
+
+> **Don't let AI do the student's research. Let AI help the student learn how to research.**
